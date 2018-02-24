@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB403974-0C44-4379-B3B2-7CD6900D2462}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>test_MVP</RootNamespace>
+    <AssemblyName>test_MVP</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APITests\APITestFramework\ApiTestException.cs" />
+    <Compile Include="APITests\APITestFramework\Assert.cs" />
+    <Compile Include="APITests\APITestFramework\Attributes.cs" />
+    <Compile Include="APITests\APITestFramework\Linker.cs" />
+    <Compile Include="APITests\APITestFramework\TestInfo.cs" />
+    <Compile Include="APITests\SimpleLog.cs" />
+    <Compile Include="APITests\TestRunner\Test_MVP_ApiTests_Runner.cs" />
+    <Compile Include="APITests\Tests\BasicTests.cs" />
+    <Compile Include="APITests\Tests\FastTests.cs" />
+    <Compile Include="EventAggregator\EventAggregator.cs" />
+    <Compile Include="EventAggregator\Events\Events.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Presenters\DetailsPagePresenter.cs" />
+    <Compile Include="Presenters\GridDataViewPresenter.cs" />
+    <Compile Include="Presenters\ResultantViewPresenter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\DetailsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DetailsPage.Designer.cs">
+      <DependentUpon>DetailsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GridDataView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\GridDataView.Designer.cs">
+      <DependentUpon>GridDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResultantView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ResultantView.Designer.cs">
+      <DependentUpon>ResultantView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TestResults.Designer.cs">
+      <DependentUpon>TestResults.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\DetailsPage.resx">
+      <DependentUpon>DetailsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GridDataView.resx">
+      <DependentUpon>GridDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ResultantView.resx">
+      <DependentUpon>ResultantView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TestResults.resx">
+      <DependentUpon>TestResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
